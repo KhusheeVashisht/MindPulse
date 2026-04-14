@@ -1,0 +1,12 @@
+.env
+# Ignore local database and dataset files
+*.db
+data/*.csv
+
+# Ignore Python cache and environment folders
+__pycache__/
+ml_env/
+
+# Ignore Node.js dependencies
+frontend/node_modules/
+node_backend/node_modules/
