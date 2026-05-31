@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: mindpulse-backend
+    env: docker
+    rootDir: .
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: FASTAPI_URL
+        value: http://127.0.0.1:8000
+      - key: FRONTEND_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: HF_TOKEN
+        sync: false
+      - key: HF_MODEL
+        value: moonshotai/Kimi-K2-Instruct-0905
+    healthCheckPath: /health
+    disk:
+      name: mindpulse-data
+      mountPath: /var/data
+      sizeGB: 1
+
+  - type: web
+    name: mindpulse-frontend
+    env: static
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        sync: false

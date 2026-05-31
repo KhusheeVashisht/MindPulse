@@ -1,7 +1,13 @@
 import axios from "axios";
 
+const apiBaseUrl =
+  import.meta.env.VITE_API_URL ||
+  (typeof window !== "undefined" && window.location.hostname === "localhost"
+    ? "http://localhost:5000"
+    : "https://mindpulse-xtfo.onrender.com");
+
 const api = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: apiBaseUrl,
 });
 
 api.interceptors.request.use((config) => {
