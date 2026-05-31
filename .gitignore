@@ -1,4 +1,5 @@
 .env
+node_backend/.env
 # Ignore local database and dataset files
 *.db
 data/*.csv
