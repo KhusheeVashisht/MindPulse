@@ -4,7 +4,7 @@ const apiBaseUrl =
   import.meta.env.VITE_API_URL ||
   (typeof window !== "undefined" && window.location.hostname === "localhost"
     ? "http://localhost:5000"
-    : "https://mindpulse-xtfo.onrender.com");
+    : "https://mindpulse-980f.onrender.com");
 
 const api = axios.create({
   baseURL: apiBaseUrl,
