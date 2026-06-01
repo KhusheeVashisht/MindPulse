@@ -29,6 +29,7 @@ scikit-learn==1.8.0
 scipy==1.17.0
 seaborn==0.13.2
 six==1.17.0
+sqlalchemy==2.0.23
 starlette==1.0.0
 threadpoolctl==3.6.0
 tqdm==4.67.3
